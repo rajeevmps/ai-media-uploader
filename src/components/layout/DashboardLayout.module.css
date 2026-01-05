@@ -1,7 +1,6 @@
 .layout {
     display: grid;
     grid-template-columns: 260px 1fr;
-    /* Sidebar collapsed width */
     height: 100vh;
     overflow: hidden;
     background-color: hsl(var(--color-bg));
@@ -34,12 +33,41 @@
     overflow-y: auto;
 }
 
+/* Tablet breakpoint */
+@media (max-width: 1200px) {
+    .workspace {
+        grid-template-columns: 1fr 280px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 220px 1fr;
+    }
+
     .workspace {
         grid-template-columns: 1fr;
     }
 
     .rightPanel {
         display: none;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .main {
+        padding: var(--spacing-sm);
     }
 }
