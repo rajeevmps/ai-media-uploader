@@ -1,0 +1,201 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background: hsla(var(--color-surface), 0.95);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid hsla(var(--color-border), var(--opacity-border));
+    padding: var(--spacing-lg);
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-2xl);
+    padding: 0 var(--spacing-xs);
+}
+
+.logoIcon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, hsl(var(--color-primary)), #a855f7);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    color: hsl(var(--color-text-muted));
+    transition: var(--transition-fast);
+    width: 100%;
+    text-align: left;
+}
+
+.navItem:hover {
+    background: hsla(var(--color-surface-hover), 0.5);
+    color: hsl(var(--color-text-main));
+}
+
+.navItem.active {
+    background: hsla(var(--color-primary), 0.1);
+    color: hsl(var(--color-primary));
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.planCard {
+    background: linear-gradient(135deg, hsla(var(--color-surface), 1), hsla(var(--color-bg), 1));
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.planTitle {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-transform: capitalize;
+}
+
+.upgradeBtn {
+    background: hsl(var(--color-primary));
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    width: 100%;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid hsla(var(--color-border), var(--opacity-border));
+    cursor: pointer;
+    transition: background 0.2s ease;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+.userProfile:hover {
+    background: hsla(var(--color-surface-hover), 0.5);
+}
+
+.userMenu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    background: hsla(var(--color-surface), 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    animation: slideUp 0.2s ease;
+    z-index: 10;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    color: hsl(var(--color-text-main));
+    transition: background 0.2s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.menuItem:hover {
+    background: hsla(var(--color-surface-hover), 0.8);
+}
+
+.menuItem.danger {
+    color: hsl(var(--color-error));
+}
+
+.menuItem.danger:hover {
+    background: hsla(var(--color-error), 0.1);
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: hsl(var(--color-surface-hover));
+    border-radius: var(--radius-full);
+    background-image: url('https://ui-avatars.com/api/?name=Demo+User&background=random');
+    background-size: cover;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.userName {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.userEmail {
+    font-size: 0.75rem;
+    color: hsl(var(--color-text-muted));
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

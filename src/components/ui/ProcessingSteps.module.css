@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: var(--spacing-lg);
+    background: hsla(var(--color-surface), 0.3);
+    border-radius: var(--radius-md);
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+}
+
+.stepRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.activeRow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: hsl(var(--color-primary));
+}
+
+.completedIcon {
+    color: hsl(var(--color-success));
+}
+
+.pendingIcon {
+    color: hsl(var(--color-text-muted));
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.activeText {
+    color: hsl(var(--color-text-main));
+    font-weight: 600;
+}
+
+.completedText {
+    color: hsl(var(--color-text-muted));
+    text-decoration: line-through;
+}
+
+.pendingText {
+    color: hsl(var(--color-text-muted));
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

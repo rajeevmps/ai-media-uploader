@@ -1,0 +1,86 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    background: hsla(var(--color-surface), 0.8);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    color: hsl(var(--color-text-main));
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background: hsl(var(--color-surface-hover));
+    border-color: hsl(var(--color-primary));
+}
+
+.button.copied {
+    background: hsla(var(--color-success), 0.15);
+    border-color: hsl(var(--color-success));
+    color: hsl(var(--color-success));
+}
+
+/* Icon Button Variant */
+.iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: hsl(var(--color-text-muted));
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+    background: hsla(var(--color-surface-hover), 0.5);
+    color: hsl(var(--color-text-main));
+}
+
+/* Minimal Button Variant */
+.minimalButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: hsl(var(--color-text-muted));
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.minimalButton:hover {
+    color: hsl(var(--color-primary));
+    background: hsla(var(--color-primary), 0.1);
+}
+
+.minimalButton.copied {
+    color: hsl(var(--color-success));
+}
+
+/* Sizes */
+.sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+.sm.iconButton {
+    padding: 0.35rem;
+}
+
+.lg {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+}
+
+.lg.iconButton {
+    padding: 0.625rem;
+}

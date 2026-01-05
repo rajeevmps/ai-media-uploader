@@ -1,0 +1,43 @@
+.flowContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutSplit {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    height: 100%;
+}
+
+.stage {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: var(--spacing-xl);
+    height: 100%;
+}
+
+.mediaArea {
+    flex-shrink: 0;
+    max-height: 400px;
+    /* Limit height of preview */
+}
+
+.actionArea {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: var(--spacing-xl);
+}
+
+.toolContainer {
+    background: hsla(var(--color-surface), 0.3);
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    flex: 1;
+}
+
+@media (min-width: 1200px) {
+    /* Side by side on huge screens if needed, strictly top-down requested but flexible */
+}

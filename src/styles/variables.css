@@ -1,0 +1,49 @@
+:root {
+  /* Colors */
+  --color-bg: 240, 10%, 8%;
+  --color-surface: 240, 10%, 12%;
+  --color-surface-hover: 240, 10%, 16%;
+  --color-primary: 260, 100%, 65%;
+  --color-primary-hover: 260, 100%, 70%;
+  --color-success: 150, 60%, 45%;
+  --color-error: 0, 80%, 60%;
+  --color-text-main: 0, 0%, 100%;
+  --color-text-muted: 240, 5%, 65%;
+  --color-border: 0, 0%, 100%;
+
+  /* Opacities */
+  --opacity-border: 0.1;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px hsla(var(--color-primary), 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Helper classes for tokens */
+.text-primary { color: hsl(var(--color-primary)); }
+.text-muted { color: hsl(var(--color-text-muted)); }
+.bg-surface { background-color: hsl(var(--color-surface)); }

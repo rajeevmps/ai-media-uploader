@@ -1,0 +1,240 @@
+.container {
+    padding: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.header p {
+    color: hsl(var(--color-text-muted));
+    font-size: 0.9rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.card {
+    background: hsla(var(--color-surface), 0.6);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    background: hsla(var(--color-surface), 0.8);
+    border-color: hsla(var(--color-border), 0.8);
+}
+
+.card.expanded {
+    border-color: hsl(var(--color-primary));
+}
+
+.cardMain {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+}
+
+.iconWrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsla(var(--color-primary), 0.15);
+    color: hsl(var(--color-primary));
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.fileName {
+    font-weight: 500;
+    color: hsl(var(--color-text-main));
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.action {
+    font-size: 0.8rem;
+    color: hsl(var(--color-text-muted));
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: hsl(var(--color-text-muted));
+    flex-shrink: 0;
+}
+
+.clockIcon {
+    opacity: 0.7;
+}
+
+.deleteBtn {
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    color: hsl(var(--color-text-muted));
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.card:hover .deleteBtn {
+    opacity: 1;
+}
+
+.deleteBtn:hover {
+    background: hsla(var(--color-error), 0.15);
+    color: hsl(var(--color-error));
+}
+
+/* Expanded Content */
+.expandedContent {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    border-top: 1px solid hsla(var(--color-border), 0.3);
+    margin-top: 0;
+    padding-top: var(--spacing-md);
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+.expandedSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.expandedLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--color-text-muted));
+}
+
+.captionText,
+.promptText {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: hsl(var(--color-text-main));
+    margin: 0;
+}
+
+.promptText {
+    font-style: italic;
+    color: hsl(var(--color-text-muted));
+}
+
+.expandedActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.improvementsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.improvementTag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: hsla(var(--color-success), 0.15);
+    color: hsl(var(--color-success));
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+.postLink {
+    font-size: 0.9rem;
+    color: hsl(var(--color-primary));
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.postLink:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Empty State */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl) * 2;
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+    min-height: 300px;
+}
+
+.emptyIcon {
+    color: hsl(var(--color-text-muted));
+    opacity: 0.5;
+}
+
+.emptyState h3 {
+    color: hsl(var(--color-text-main));
+    margin: 0;
+}
+
+.emptyState p {
+    margin: 0;
+    font-size: 0.9rem;
+}

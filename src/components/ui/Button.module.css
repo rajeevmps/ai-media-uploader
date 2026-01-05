@@ -1,0 +1,110 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm, 0.5rem);
+    border-radius: var(--radius-md, 8px);
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all var(--transition-normal, 0.2s);
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Sizes */
+.sm {
+    height: 32px;
+    padding: 0 var(--spacing-md, 0.75rem);
+    font-size: 0.8125rem;
+}
+
+.md {
+    height: 40px;
+    padding: 0 var(--spacing-lg, 1rem);
+    font-size: 0.875rem;
+}
+
+.lg {
+    height: 48px;
+    padding: 0 var(--spacing-xl, 1.5rem);
+    font-size: 1rem;
+}
+
+/* Variants */
+.primary {
+    background: hsl(var(--color-primary));
+    color: hsl(var(--color-primary-foreground, 0, 0%, 100%));
+}
+
+.primary:hover:not(:disabled) {
+    background: hsl(var(--color-primary) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--color-primary) / 0.25);
+}
+
+.secondary {
+    background: hsl(var(--color-secondary, 220 13% 91%));
+    color: hsl(var(--color-secondary-foreground, 222 47% 11%));
+}
+
+.secondary:hover:not(:disabled) {
+    background: hsl(var(--color-secondary, 220 13% 91%) / 0.8);
+}
+
+.ghost {
+    background: transparent;
+    color: hsl(var(--color-foreground));
+}
+
+.ghost:hover:not(:disabled) {
+    background: hsl(var(--color-surface-hover, 0 0% 96%));
+}
+
+.glass {
+    background: hsla(var(--color-surface), 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsla(var(--color-border), 0.2);
+    color: hsl(var(--color-foreground));
+}
+
+.glass:hover:not(:disabled) {
+    background: hsla(var(--color-surface), 0.6);
+    border-color: hsla(var(--color-primary), 0.3);
+}
+
+.loading {
+    color: transparent !important;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+    color: currentColor;
+}
+
+.icon {
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

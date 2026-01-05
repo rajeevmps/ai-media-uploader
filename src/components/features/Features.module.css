@@ -1,0 +1,348 @@
+/* Shared styles for feature components */
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.content {
+    flex: 1;
+    background: hsla(var(--color-surface), 0.5);
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollableContent {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    padding: var(--spacing-md);
+    color: hsl(var(--color-text-main));
+    font-family: inherit;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+/* New class for SocialPoster to replace inline styles */
+.socialTextarea {
+    width: 100%;
+    height: 150px;
+    background: hsla(0, 0%, 0%, 0.2);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
+    color: hsl(var(--color-text-main));
+    font-family: inherit;
+    resize: vertical;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.socialTextarea:focus {
+    outline: 2px solid hsl(var(--color-primary));
+    border-color: transparent;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+}
+
+.editorControls {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.platformSelector {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.input {
+    width: 100%;
+    background: hsla(var(--color-surface), 0.5);
+    border: 1px solid hsla(var(--color-border), var(--opacity-border));
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    color: hsl(var(--color-text-main));
+}
+
+.input:focus {
+    outline: none;
+    border-color: hsl(var(--color-primary));
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.label {
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Skeleton Loading */
+.skeletonText {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.line {
+    height: 12px;
+    background: hsla(var(--color-text-muted), 0.1);
+    border-radius: var(--radius-full);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Header Actions */
+.headerActions {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+/* Settings Panel */
+.settingsPanel {
+    background: hsla(var(--color-surface), 0.6);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.settingRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+}
+
+.settingRow label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: hsl(var(--color-text-main));
+}
+
+.select {
+    background: hsla(var(--color-bg), 0.8);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-sm);
+    padding: 0.375rem 0.75rem;
+    color: hsl(var(--color-text-main));
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.select:focus {
+    outline: 2px solid hsl(var(--color-primary));
+    border-color: transparent;
+}
+
+/* Error State */
+.errorState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+}
+
+/* Spin Animation */
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Image Editor Styles */
+.editorInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.instructionIcon {
+    color: hsl(var(--color-primary));
+}
+
+.promptExamples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    justify-content: center;
+    padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.exampleChip {
+    padding: 0.375rem 0.75rem;
+    background: hsla(var(--color-primary), 0.1);
+    border: 1px solid hsla(var(--color-primary), 0.3);
+    border-radius: var(--radius-full);
+    color: hsl(var(--color-primary));
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.exampleChip:hover {
+    background: hsla(var(--color-primary), 0.2);
+    border-color: hsl(var(--color-primary));
+}
+
+.promptInput {
+    width: 100%;
+    background: hsla(var(--color-bg), 0.5);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    color: hsl(var(--color-text-main));
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    margin-bottom: var(--spacing-sm);
+}
+
+.promptInput:focus {
+    outline: 2px solid hsl(var(--color-primary));
+    border-color: transparent;
+}
+
+/* Media Enhancer Styles */
+.enhancePreview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: hsl(var(--color-bg));
+}
+
+.previewMedia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.previewOverlay {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    padding: 0.25rem 0.5rem;
+    background: hsla(0, 0%, 0%, 0.6);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+}
+
+.enhanceOptions {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.enhanceOptions h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--color-text-main));
+    margin-bottom: var(--spacing-xs);
+}
+
+.optionRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: hsl(var(--color-text-main));
+    cursor: pointer;
+}
+
+.optionRow input[type="checkbox"] {
+    accent-color: hsl(var(--color-primary));
+}

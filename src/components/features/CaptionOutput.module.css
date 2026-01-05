@@ -1,0 +1,197 @@
+.container {
+    background: hsla(var(--color-surface), 0.6);
+    border: 1px solid hsla(var(--color-border), 0.5);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    backdrop-filter: blur(8px);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid hsla(var(--color-border), 0.3);
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.headerIcon {
+    color: hsl(var(--color-primary));
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(var(--color-text-main));
+    margin: 0;
+}
+
+.headerActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Caption Box */
+.captionBox {
+    background: hsla(var(--color-bg), 0.5);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.captionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--color-text-muted));
+}
+
+.captionText {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: hsl(var(--color-text-main));
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* Hashtags Box */
+.hashtagsBox {
+    background: hsla(var(--color-bg), 0.5);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hashtagsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.hashtagLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--color-text-muted));
+}
+
+.hashtagsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hashtag {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: hsla(var(--color-primary), 0.15);
+    color: hsl(var(--color-primary));
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.hashtag:hover {
+    background: hsla(var(--color-primary), 0.25);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid hsla(var(--color-border), 0.3);
+}
+
+/* Loading State */
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.loadingIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsla(var(--color-primary), 0.15);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.sparkle {
+    color: hsl(var(--color-primary));
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
+}
+
+.loadingText {
+    font-size: 0.9rem;
+    color: hsl(var(--color-text-muted));
+    margin-bottom: 1rem;
+}
+
+.loadingBar {
+    width: 200px;
+    height: 4px;
+    background: hsla(var(--color-surface-hover), 0.5);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loadingProgress {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, hsl(var(--color-primary)), hsl(var(--color-primary-hover)));
+    border-radius: var(--radius-full);
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(350%);
+    }
+}
